@@ -50,7 +50,7 @@ function run($rootScope, $state, PermTransitionProperties, PermTransitionEvents,
       if (!PermTransitionEvents.areEventsDefaultPrevented()) {
         PermTransitionEvents.broadcastPermissionStartEvent();
 
-        $state.transition = {};
+        //$state.transition = {};  ui-router 1.0.0 $state.transition is a read-only
         event.preventDefault();
         var statePermissionMap = new PermStatePermissionMap(PermTransitionProperties.toState);
 

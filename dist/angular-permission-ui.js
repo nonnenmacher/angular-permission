@@ -1,7 +1,7 @@
 /**
  * angular-permission-ui
  * Extension module of angular-permission for access control within ui-router
- * @version v4.0.6 - 2016-09-21
+ * @version v4.0.6 - 2016-10-18
  * @link https://github.com/Narzerus/angular-permission
  * @author Rafael Vidaurre <narzerus@gmail.com> (http://www.rafaelvidaurre.com), Blazej Krysiak <blazej.krysiak@gmail.com>
  * @license MIT License, http://www.opensource.org/licenses/MIT
@@ -66,7 +66,7 @@
         if (!PermTransitionEvents.areEventsDefaultPrevented()) {
           PermTransitionEvents.broadcastPermissionStartEvent();
 
-          $state.transition = {};
+          //$state.transition = {};  ui-router 1.0.0 $state.transition is a read-only
           event.preventDefault();
           var statePermissionMap = new PermStatePermissionMap(PermTransitionProperties.toState);
 
@@ -277,6 +277,7 @@
   angular
     .module('permission.ui')
     .decorator('PermTransitionEvents', PermTransitionEvents);
+
 
   /**
    * Constant storing event names for ng-route
