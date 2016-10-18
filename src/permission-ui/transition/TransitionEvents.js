@@ -27,7 +27,7 @@ function PermTransitionEvents($delegate, $rootScope, PermTransitionProperties, P
    * @returns {boolean}
    */
   function areEventsDefaultPrevented() {
-    return isStateChangePermissionStartDefaultPrevented() || isStateChangeStartDefaultPrevented();
+    return isStateChangePermissionStartDefaultPrevented(); // try fix issue #335 || isStateChangeStartDefaultPrevented();
   }
 
   /**
